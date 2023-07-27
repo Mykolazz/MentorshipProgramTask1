@@ -1,11 +1,16 @@
 package dto;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class User implements Serializable {
+   // @SerializedName("number")
     public String name;
+   // @SerializedName("surname")
     public String surname;
+   // @SerializedName("birthday")
     public LocalDate birthday;
 
     public String getName() {
@@ -30,5 +35,9 @@ public class User implements Serializable {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    public String toString() {
+        return "User [ name: "+name+", surname: "+ surname+ ", birthday:" + birthday + " ]";
     }
 }

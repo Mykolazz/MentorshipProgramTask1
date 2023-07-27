@@ -9,11 +9,11 @@ import java.util.List;
 // add constructor, think about setters
 public class BankCard implements Serializable {
 
-    @SerializedName("number")
-    private String number;
+   // @SerializedName("number")
+    public String number;
 
-    @SerializedName("user")
-    private User user;
+   // @SerializedName("user")
+    public User user;
 
     private static List<String> listOfNumbers = new ArrayList<>();
     private static Long lastNumber;
@@ -44,5 +44,9 @@ public class BankCard implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String toString() {
+        return "BankCard [ number: "+number+", user: "+ user+ " ]";
     }
 }

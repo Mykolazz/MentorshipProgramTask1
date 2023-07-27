@@ -1,23 +1,31 @@
 package dto;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Subscription implements Serializable {
-    public final String bankCard;
+    @SerializedName("bankCardNumber")
+    public final String bankCardNumber;
+    @SerializedName("startDate")
     public final LocalDate startDate;
 
     public Subscription(BankCard bankCard) {
-        this.bankCard = bankCard.getNumber();
+        this.bankCardNumber = bankCard.getNumber();
         // check about default time zone
         this.startDate = LocalDate.now();
     }
 
-    public String getBankCard() {
-        return bankCard;
+    public String getBankCardNumber() {
+        return bankCardNumber;
     }
 
     public LocalDate getStartDate() {
         return startDate;
+    }
+
+    public String toString() {
+        return "Subscription [ bankCardNumber: "+bankCardNumber+", startDate: "+ startDate+ " ]";
     }
 }
