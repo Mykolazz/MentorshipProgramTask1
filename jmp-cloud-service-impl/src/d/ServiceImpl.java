@@ -1,15 +1,9 @@
 package d;
 
 import c.Service;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import dto.*;
-
-import java.io.*;
 import java.util.List;
 import java.util.Optional;
-
-import com.google.gson.Gson;
 
 public class ServiceImpl implements Service {
 
@@ -32,18 +26,6 @@ public class ServiceImpl implements Service {
     }
 
     public List<Subscription> getAllSubscriptions() {
-        /*
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try {
-            return gson.fromJson(new FileReader("subscriptions.json"), new TypeToken<List<Subscription>>() {
-                }.getType());
-        } catch (FileNotFoundException e) {
-                // тут можна використати Optional
-                e.printStackTrace();
-                return null;
-            }
-
-         */
 
         return getAllFromJson(Subscription.class, "subscriptions.json");
         }

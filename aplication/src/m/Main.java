@@ -18,8 +18,8 @@ public class Main {
         Service service = new ServiceImpl();
         service.subscribe(creditBankCard);
         service.subscribe(debitBankCard);
-        // System.out.println("SubscriptionByBankCardNumber: " + service.getSubscriptionByBankCardNumber("1"));
-        // System.out.println("All users: " + service.getAllUsers());
+        System.out.println("SubscriptionByBankCardNumber: " + service.getSubscriptionByBankCardNumber("1"));
+        System.out.println("All users: " + service.getAllUsers());
         // System.out.println("Average age of users: " + service.getAverageUsersAge());
 
     }
